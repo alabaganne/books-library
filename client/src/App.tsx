@@ -4,10 +4,10 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <p className='text-red-400'>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
