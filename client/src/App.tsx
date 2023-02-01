@@ -5,7 +5,9 @@ import Layout from './components/Layout';
 
 function App() {
   return (
-    <Layout children={(<Outlet />)}/>
+    <div>
+      <Layout children={(<Outlet />)}/>
+    </div>
   );
 }
 
