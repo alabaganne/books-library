@@ -1,7 +1,7 @@
 const Login: React.FC = () => {
 	return (
 		<div>
-			Log in
+			Log in page
 		</div>
 	);
 }

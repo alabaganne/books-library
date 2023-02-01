@@ -1,16 +1,11 @@
 import React from 'react';
 import './App.css';
 import { Outlet } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Layout from './components/Layout';
 
-const App: React.FC = () => {
+function App() {
   return (
-    <div className='min-h-screen bg-gray-50'>
-      <Navbar />
-      <div className='p-6'>
-        <Outlet />
-      </div>
-    </div>
+    <Layout children={(<Outlet />)}/>
   );
 }
 
