@@ -1,9 +1,5 @@
-const Login: React.FC = () => {
-	return (
-		<div>
-			Log in page
-		</div>
-	);
+function Login() {
+  return <div>Login page</div>;
 }
 
 export default Login;

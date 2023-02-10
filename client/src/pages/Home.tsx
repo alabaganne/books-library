@@ -1,22 +1,33 @@
-import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
+import { FiArrowRight } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 function Home() {
-	return (
-		<div className="flex-1  text-white p-12 text-center flex-center header-img bg-cover bg-center">
-			<div className="flex items-center flex-col w-full">
-				<h1 className="font-black text-6xl uppercase">To succeed <br />you must <br />read</h1>
-				<p className="mt-6 text-sm font-medium"><span className="underline font-bold">Not sure what to read?</span> <span className="opacity-75">Explore our catalog of <br /> public domain books with our editors.</span></p>
-				<div className="mt-8">
-					<Link to="books" className="btn-xl btn-white flex items-center gap-4">
-						<span>Explore books</span>
-						<span>|</span>
-						<ArrowUpRightIcon className="h-4 w-4" />
-					</Link>
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <div>
+      <div className="grid grid-cols-2">
+        <div className="col-span-1 flex items-center justify-end bg-gray-100 p-20">
+          <div className="max-w-[600px]">
+            <h1 className="text-5xl font-semibold">
+              The Easiest Way To Find Your Favorite Book
+            </h1>
+            <p className="mt-8">
+              The list includes a book about Italien Architecture and landmark
+              book about the Stock Market. There is also Poetry and a famous
+              novel about time travel.
+            </p>
+            <Link
+              to="/books"
+              className="mt-6 inline-flex items-center gap-2 rounded bg-indigo-500 px-5 py-3 font-semibold text-white shadow hover:bg-indigo-600"
+            >
+              Explore Books <FiArrowRight />
+            </Link>
+          </div>
+        </div>
+        <div className="bg-yellow-400"></div>
+      </div>
+      <div className="container mx-auto py-16"></div>
+    </div>
+  );
 }
 
 export default Home;
