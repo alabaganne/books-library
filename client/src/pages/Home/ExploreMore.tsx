@@ -11,7 +11,7 @@ export default function ExploreMore() {
           variety of bookish subjects, publishers, and interesting characters in
           litertature and notable anniversaries
         </p>
-        <button className="btn btn-lg btn-primary mt-6">
+        <button className="btn-common btn-lg btn-primary mt-6">
           See All Features <FiArrowRight />
         </button>
       </div>

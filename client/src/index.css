@@ -17,61 +17,68 @@
 
 /* colors: indigo, yellow, and red */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Arima', cursive;
-}
-h1,
-h2,
-h3 {
-  @apply font-medium;
-}
+@layer components {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Arima', cursive;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-medium;
+  }
 
-h1 {
-  @apply text-6xl;
-}
-h2 {
-  @apply text-4xl;
-}
-h3 {
-  @apply text-2xl;
-}
-h4 {
-  @apply text-xl;
-}
-h5 {
-  @apply text-lg;
-}
+  h1 {
+    @apply text-6xl;
+  }
+  h2 {
+    @apply text-4xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-lg;
+  }
 
-.flex-center {
-  @apply flex items-center justify-center;
-}
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
 
-.btn {
-  /* frequently used button styles */
-  @apply inline-flex items-center gap-1 rounded border border-transparent shadow;
-}
-/* button sizes */
-.btn-base {
-  @apply px-4 py-2 font-medium;
-}
-.btn-lg {
-  @apply px-5 py-3 font-semibold;
-}
-/* button colors */
-.btn-primary {
-  /* only when background is light */
-  @apply bg-indigo-500 text-white hover:bg-indigo-600;
-}
-.btn-secondary {
-  /* only when background is dark */
-  @apply bg-yellow-400 text-black hover:bg-yellow-500;
-}
-.btn-outline-black {
-  /* only when background is light */
-  @apply border-black bg-transparent text-black hover:bg-black hover:text-white;
+  .btn-common {
+    /* common button styles */
+    @apply inline-flex items-center gap-1 rounded border border-transparent shadow;
+  }
+  /* button sizes */
+  .btn-base {
+    @apply px-4 py-2 font-medium;
+  }
+  .btn-lg {
+    @apply px-5 py-3 font-semibold;
+  }
+  /* button colors */
+  .btn-primary {
+    /* only when background is light */
+    @apply bg-indigo-500 text-white hover:bg-indigo-600;
+  }
+  .btn-secondary {
+    /* only when background is dark */
+    @apply bg-yellow-400 text-black hover:bg-yellow-500;
+  }
+  .btn-outline-black {
+    /* only when background is light */
+    @apply border-black bg-transparent text-black hover:bg-black hover:text-white;
+  }
+
+  .bg-common {
+    /* common background image styles */
+    @apply bg-cover bg-center;
+  }
 }

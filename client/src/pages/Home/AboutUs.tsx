@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import readingImage from '../../assets/reading-home-about-us.jpg';
+import readingImage from '../../assets/2.jpg';
 
 export default function AboutUs() {
   return (
@@ -34,7 +34,9 @@ export default function AboutUs() {
               </p>
             </div>
             <div>
-              <button className="btn btn-lg btn-primary">More About Us</button>
+              <button className="btn-common btn-lg btn-primary">
+                More About Us
+              </button>
             </div>
           </div>
         </div>

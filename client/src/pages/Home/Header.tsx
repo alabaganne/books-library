@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
-import readingImage from '../../assets/reading-home-header.jpg';
+import headerImage from '../../assets/7.jpg';
 
 export default function Header() {
-  console.log('reading image:', readingImage);
+  console.log('reading image:', headerImage);
   return (
     <header className="grid grid-cols-2">
       <div className="col-span-1 flex items-center justify-end bg-gray-100 p-20">
@@ -16,7 +16,7 @@ export default function Header() {
             book about the Stock Market. There is also Poetry and a famous novel
             about time travel.
           </p>
-          <Link to="/books" className="btn btn-lg btn-primary mt-8">
+          <Link to="/books" className="btn-common btn-lg btn-primary mt-8">
             Explore Our Books <FiArrowRight />
           </Link>
         </div>
@@ -24,15 +24,15 @@ export default function Header() {
       <div
         style={{
           backgroundImage:
-            'linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0,0,0,.8)), url(' +
-            readingImage +
-            ')',
+            'linear-gradient(to bottom, rgba(0, 0, 0, .0), rgba(0,0,0,.0)),' +
+            headerImage +
+            +')',
         }}
         className="flex h-screen max-h-[700px] items-end justify-end bg-cover bg-center p-12 text-right text-yellow-400"
       >
-        <h1 className="text-7xl font-bold">
+        {/* <h1 className="text-8xl font-bold uppercase">
           To Succeed <br /> You Must Read
-        </h1>
+        </h1> */}
       </div>
     </header>
   );

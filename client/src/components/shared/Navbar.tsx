@@ -3,15 +3,19 @@ import {
   FiChevronDown,
   FiGlobe,
   FiHeart,
+  FiLogIn,
   FiMap,
   FiMapPin,
   FiPhone,
   FiSearch,
   FiShoppingCart,
   FiUser,
+  FiUserPlus,
 } from 'react-icons/fi';
 
 function Navbar() {
+  let isLoggedIn = false;
+
   return (
     <nav className="bg-gray-800 text-sm text-white">
       <div className="container mx-auto pt-6 pb-8">
@@ -56,24 +60,45 @@ function Navbar() {
               </button>
             </form>
             <div className="flex items-center gap-8">
-              <Link to="/account" className="flex items-center gap-2">
-                <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
-                  <FiUser className="h-5 w-5" />
-                </div>
-                <span>My Account</span>
-              </Link>
-              <div className="flex items-center gap-2">
-                <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
-                  <FiShoppingCart className="h-5 w-5" />
-                </div>
-                <span>Cart - 0 Items</span>
-              </div>
-              <Link to="/wishlist" className="flex items-center gap-2">
-                <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
-                  <FiHeart className="h-5 w-5" />
-                </div>
-                <span>Wishlist</span>
-              </Link>
+              {}
+              {isLoggedIn && (
+                <>
+                  <Link to="/account" className="flex items-center gap-2">
+                    <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
+                      <FiUser className="h-5 w-5" />
+                    </div>
+                    <span>My Account</span>
+                  </Link>
+                  <div className="flex items-center gap-2">
+                    <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
+                      <FiShoppingCart className="h-5 w-5" />
+                    </div>
+                    <span>Cart - 0 Items</span>
+                  </div>
+                  <Link to="/wishlist" className="flex items-center gap-2">
+                    <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
+                      <FiHeart className="h-5 w-5" />
+                    </div>
+                    <span>Wishlist</span>
+                  </Link>
+                </>
+              )}
+              {!isLoggedIn && (
+                <>
+                  <Link to="/login" className="flex items-center gap-2">
+                    <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
+                      <FiLogIn />
+                    </div>
+                    <span>Log In</span>
+                  </Link>
+                  <Link to="/register" className="flex items-center gap-2">
+                    <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
+                      <FiUserPlus />
+                    </div>
+                    <span>Register</span>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>

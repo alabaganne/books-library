@@ -10,7 +10,7 @@ function Home() {
   return (
     <div>
       <Header />
-      <div className="container mx-auto flex flex-col gap-16 py-16">
+      <div className="container mx-auto flex flex-col gap-20 py-16">
         <BestSellers />
         <ExploreMore />
         <NewReleases />
