@@ -21,7 +21,7 @@ export default function Newsletter() {
             className="flex-1 rounded bg-white px-4 py-2 text-base shadow-sm outline-none focus:placeholder-transparent"
             placeholder="Enter your email address"
           />
-          <button className="btn btn-lg btn-secondary items-center gap-2">
+          <button className="btn-common btn-lg btn-secondary items-center gap-2">
             Sign Me Up
           </button>
         </form>

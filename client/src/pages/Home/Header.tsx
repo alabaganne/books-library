@@ -24,9 +24,9 @@ export default function Header() {
       <div
         style={{
           backgroundImage:
-            'linear-gradient(to bottom, rgba(0, 0, 0, .0), rgba(0,0,0,.0)),' +
+            'linear-gradient(to bottom, rgba(0, 0, 0, .0), rgba(0,0,0,.0)), url(' +
             headerImage +
-            +')',
+            ')',
         }}
         className="flex h-screen max-h-[700px] items-end justify-end bg-cover bg-center p-12 text-right text-yellow-400"
       >

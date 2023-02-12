@@ -63,11 +63,15 @@ function Footer() {
     <footer className="bg-gray-100 py-12">
       <div className="container mx-auto grid grid-cols-5">
         {footerLinkSection.map((section) => (
-          <div className="flex flex-col gap-4">
+          <div key={section.name} className="flex flex-col gap-4">
             <div className="text-lg font-semibold">{section.name}</div>
             <div className="flex flex-col gap-4">
               {section.links.map((link) => (
-                <Link className="hover:underline" to={link.href}>
+                <Link
+                  key={link.name}
+                  className="hover:underline"
+                  to={link.href}
+                >
                   {link.name}
                 </Link>
               ))}

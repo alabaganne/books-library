@@ -42,6 +42,7 @@ export default function AboveBlog() {
         {blogPosts &&
           blogPosts.map((post) => (
             <Link
+              key={post.id}
               to="/"
               className="bg-common col-span-1 flex h-60 items-end rounded-lg bg-white p-6 text-white"
               style={{

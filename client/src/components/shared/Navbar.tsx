@@ -12,9 +12,22 @@ import {
   FiUser,
   FiUserPlus,
 } from 'react-icons/fi';
+import { useState } from 'react';
+
+interface Language {
+  name: string;
+  fullName: string;
+  flagIconClass: string; // class for icon
+}
 
 function Navbar() {
   let isLoggedIn = false;
+
+  const languages: Array<Language> = [
+    { name: 'EN', fullName: 'English', flagIconClass: 'fi-us' },
+    { name: 'FR', fullName: 'French', flagIconClass: 'fi-fr' },
+  ];
+  const [language, setLanguage] = useState(languages[0]);
 
   return (
     <nav className="bg-gray-800 text-sm text-white">
@@ -24,17 +37,31 @@ function Navbar() {
             Free delivery over <strong>300 DT</strong>. Order gifts by the end
             of <strong>21 December</strong>
           </div>
-          <div className="flex items-center gap-6">
-            <button className="flex items-center">
-              <FiGlobe className="h-5 w-5" />
-              <span className="ml-2 mr-1">EN</span>
-              <FiChevronDown className="h-3 w-3" />
-            </button>
+          <div className="flex items-center gap-8">
+            <div className="group relative flex items-center">
+              <div className={'fi ' + language.flagIconClass}></div>
+              <span className="ml-2 mr-1">{language.name}</span>
+              <FiChevronDown className="h-3" />
+              <div className="absolute top-full right-0 hidden pt-2 group-hover:block">
+                <div className="w-32 divide-y overflow-hidden rounded bg-white text-black">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.name}
+                      onClick={() => setLanguage(lang)}
+                      className="flex w-full items-center p-2 hover:bg-gray-100"
+                    >
+                      <span className={'fi ' + lang.flagIconClass}></span>
+                      <div className="ml-2">{lang.fullName}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
             <div className="flex items-center gap-2">
               <FiPhone className="h-5 w-5" />
               <span>+216 50 101 959</span>
             </div>
-            <Link to="/" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2 hover:underline">
               <FiMapPin className="h-5 w-5" />
               <span>See Our Store Locations</span>
             </Link>
@@ -60,52 +87,30 @@ function Navbar() {
               </button>
             </form>
             <div className="flex items-center gap-8">
-              {}
-              {isLoggedIn && (
-                <>
-                  <Link to="/account" className="flex items-center gap-2">
-                    <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
-                      <FiUser className="h-5 w-5" />
-                    </div>
-                    <span>My Account</span>
-                  </Link>
-                  <div className="flex items-center gap-2">
-                    <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
-                      <FiShoppingCart className="h-5 w-5" />
-                    </div>
-                    <span>Cart - 0 Items</span>
-                  </div>
-                  <Link to="/wishlist" className="flex items-center gap-2">
-                    <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
-                      <FiHeart className="h-5 w-5" />
-                    </div>
-                    <span>Wishlist</span>
-                  </Link>
-                </>
-              )}
-              {!isLoggedIn && (
-                <>
-                  <Link to="/login" className="flex items-center gap-2">
-                    <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
-                      <FiLogIn />
-                    </div>
-                    <span>Log In</span>
-                  </Link>
-                  <Link to="/register" className="flex items-center gap-2">
-                    <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
-                      <FiUserPlus />
-                    </div>
-                    <span>Register</span>
-                  </Link>
-                </>
-              )}
+              <Link
+                to={isLoggedIn ? '/account' : '/register'}
+                className="flex items-center gap-2"
+              >
+                <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
+                  <FiUser className="h-5 w-5" />
+                </div>
+                <span>{isLoggedIn ? 'My Account' : 'Create Account'}</span>
+              </Link>
+              <div className="flex items-center gap-2">
+                <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
+                  <FiShoppingCart className="h-5 w-5" />
+                </div>
+                <span>Cart - 0 Items</span>
+              </div>
+              <Link to="/wishlist" className="flex items-center gap-2">
+                <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
+                  <FiHeart className="h-5 w-5" />
+                </div>
+                <span>Wishlist</span>
+              </Link>
             </div>
           </div>
         </div>
-        {/* <Link to="/">Home</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/register">Register</Link>
-        <Link to="/login">Login</Link> */}
       </div>
     </nav>
   );
