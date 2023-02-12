@@ -75,7 +75,7 @@ function Register() {
         </form>
         <Link
           to="/"
-          className="mt-6 flex items-center gap-2 text-sm text-indigo-400 hover:text-indigo-600"
+          className="mt-6 flex items-center gap-2 text-sm text-indigo-500 hover:text-indigo-600"
         >
           <FiArrowLeft /> Go back home
         </Link>

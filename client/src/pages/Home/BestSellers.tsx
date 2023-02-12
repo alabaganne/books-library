@@ -23,7 +23,8 @@ export default function BestSellers() {
         </Link>
       </div>
       <div className="mt-8 grid grid-cols-5 gap-6">
-        {books && books.map((book) => <BookCard book={book} />)}
+        {books &&
+          books.map((book, index) => <BookCard key={index} book={book} />)}
       </div>
     </div>
   );

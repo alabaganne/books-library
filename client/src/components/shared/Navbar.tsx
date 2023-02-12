@@ -64,7 +64,7 @@ function Navbar() {
             </div>
             <Link to="/" className="flex items-center gap-2">
               <FiMapPin className="h-5 w-5" />
-              <span>See Our Store Locations -&gt;</span>
+              <span>Find Our Stores -&gt;</span>
             </Link>
           </div>
         </div>

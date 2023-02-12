@@ -8,10 +8,18 @@ interface Props {
 }
 
 export default function BookCard(props: Props) {
+  function like() {
+    console.log('book liked:', props.book.id);
+  }
+
+  function addToCart() {
+    console.log('book added to card:', props.book.id);
+  }
+
   return (
     <Link
-      to="/"
-      className="rounded-xl p-4 duration-100 hover:scale-105 hover:shadow-lg"
+      to={'/books/' + props.book.id}
+      className="rounded-md p-6 duration-100 hover:scale-105 hover:shadow-lg"
     >
       <div>
         <img src={image} alt={props.book.title} className="mx-auto w-4/5" />
@@ -34,11 +42,14 @@ export default function BookCard(props: Props) {
         </div>
       </div>
       <div className="flex-between mt-4">
-        <button className="btn-common btn-sm btn-outline-black">
+        <button
+          onClick={addToCart}
+          className="btn-common btn-sm btn-outline-black"
+        >
           <FiShoppingCart className="mr-1 h-5 w-5" />
           <span>Add to Cart</span>
         </button>
-        <button className="rounded-full p-2 hover:bg-gray-100">
+        <button onClick={like} className="rounded-full p-2 hover:bg-gray-100">
           <FiHeart className="h-5 w-5" />
         </button>
       </div>
