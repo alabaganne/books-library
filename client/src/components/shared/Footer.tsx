@@ -8,6 +8,7 @@ import {
 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
+// let footerLinkSection = [];
 let footerLinkSection = [
   {
     name: 'Customer Service',
@@ -76,19 +77,19 @@ function Footer() {
         <div className="flex flex-col gap-4">
           <div className="text-lg font-semibold">Social Media</div>
           <div className="flex items-center gap-8">
-            <a href="#" className="text-[#4267B2] hover:text-gray-700">
+            <a href="#" className="text-[#4267B2] hover:text-black">
               <FiFacebook className="h-6 w-6" />
             </a>
-            <a href="#" className="text-[#405DE6] hover:text-gray-700">
+            <a href="#" className="text-[#405DE6] hover:text-black">
               <FiInstagram className="h-6 w-6" />
             </a>
-            <a href="#" className="text-[#1DA1F2] hover:text-gray-700">
+            <a href="#" className="text-[#1DA1F2] hover:text-black">
               <FiTwitter className="h-6 w-6" />
             </a>
-            <a href="#" className="text-[#FF0000] hover:text-gray-700">
+            <a href="#" className="text-[#FF0000] hover:text-black">
               <FiYoutube className="h-6 w-6" />
             </a>
-            <a href="#" className="text-[#0077B5] hover:text-gray-700">
+            <a href="#" className="text-[#0077B5] hover:text-black">
               <FiLinkedin className="h-6 w-6" />
             </a>
           </div>
