@@ -26,29 +26,30 @@ function Navbar() {
   const languages: Array<Language> = [
     { name: 'EN', fullName: 'English', flagIconClass: 'fi-us' },
     { name: 'FR', fullName: 'French', flagIconClass: 'fi-fr' },
+    { name: 'AR', fullName: 'العربية', flagIconClass: 'fi-tn' }, // will remove mostly because having a website in arabic requires inverting the content which takes a lot of time
   ];
   const [language, setLanguage] = useState(languages[0]);
 
   return (
-    <nav className="bg-gray-800 text-sm text-white">
-      <div className="container mx-auto pt-6 pb-8">
+    <nav className="bg-gray-900 text-white">
+      <div className="container mx-auto py-7">
         <div className="flex items-center justify-between">
           <div>
             Free delivery over <strong>300 DT</strong>. Order gifts by the end
             of <strong>21 December</strong>
           </div>
           <div className="flex items-center gap-8">
-            <div className="group relative flex items-center">
+            <div className="group relative flex cursor-default items-center">
               <div className={'fi ' + language.flagIconClass}></div>
               <span className="ml-2 mr-1">{language.name}</span>
               <FiChevronDown className="h-3" />
               <div className="absolute top-full right-0 hidden pt-2 group-hover:block">
-                <div className="w-32 divide-y overflow-hidden rounded bg-white text-black">
+                <div className="w-40 divide-y overflow-hidden rounded bg-white text-black shadow-md">
                   {languages.map((lang) => (
                     <button
                       key={lang.name}
                       onClick={() => setLanguage(lang)}
-                      className="flex w-full items-center p-2 hover:bg-gray-100"
+                      className="flex w-full items-center px-4 py-3 hover:bg-gray-100"
                     >
                       <span className={'fi ' + lang.flagIconClass}></span>
                       <div className="ml-2">{lang.fullName}</div>
@@ -59,24 +60,21 @@ function Navbar() {
             </div>
             <div className="flex items-center gap-2">
               <FiPhone className="h-5 w-5" />
-              <span>+216 50 101 959</span>
+              <span>(+216) 50101959</span>
             </div>
-            <Link to="/" className="flex items-center gap-2 hover:underline">
+            <Link to="/" className="flex items-center gap-2">
               <FiMapPin className="h-5 w-5" />
-              <span>See Our Store Locations</span>
+              <span>See Our Store Locations -&gt;</span>
             </Link>
           </div>
         </div>
-        <div className="mt-10 flex items-end justify-between gap-10">
+        <div className="mt-16 flex items-end justify-between gap-12">
           <Link to="/">
-            <div className="text-4xl font-bold">
-              BOOKS <br />
-              STORE
-            </div>
+            <h1 className="text-6xl font-bold">bookstore</h1>
             <div>Read More, Learn More</div>
           </Link>
           <div className="flex flex-1 items-center justify-between gap-10">
-            <form className="flex max-w-2xl flex-1 items-center rounded-md bg-white py-3 px-4">
+            <form className="form-control flex max-w-2xl flex-1 items-center rounded-md">
               <input
                 type="text"
                 placeholder="Search for Books, Authors, Genres..."
@@ -94,14 +92,14 @@ function Navbar() {
                 <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
                   <FiUser className="h-5 w-5" />
                 </div>
-                <span>{isLoggedIn ? 'My Account' : 'Create Account'}</span>
+                <span>{isLoggedIn ? 'My Account' : 'Register'}</span>
               </Link>
-              <div className="flex items-center gap-2">
+              <Link to="/cart" className="flex items-center gap-2">
                 <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
                   <FiShoppingCart className="h-5 w-5" />
                 </div>
                 <span>Cart - 0 Items</span>
-              </div>
+              </Link>
               <Link to="/wishlist" className="flex items-center gap-2">
                 <div className="flex-center h-9 w-9 rounded-full border-2 border-gray-200 bg-white p-1 text-black">
                   <FiHeart className="h-5 w-5" />

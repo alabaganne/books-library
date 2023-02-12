@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import readingImage from '../../assets/2.jpg';
+import image from '../../assets/2.jpg';
 
 export default function AboutUs() {
   return (
@@ -34,15 +34,18 @@ export default function AboutUs() {
               </p>
             </div>
             <div>
-              <button className="btn-common btn-lg btn-primary">
+              <Link to="/about" className="btn-common btn-lg btn-primary">
                 More About Us
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
       <div>
-        <img src={readingImage} alt="A person reading a book with a coffee" />
+        <img
+          src={image}
+          alt="A person reading a book with a coffee next to the book"
+        />
       </div>
     </div>
   );

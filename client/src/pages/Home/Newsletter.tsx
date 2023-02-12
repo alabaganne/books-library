@@ -18,7 +18,7 @@ export default function Newsletter() {
         <form action="" className="mt-10 flex w-full max-w-2xl flex-1 gap-2">
           <input
             type="text"
-            className="flex-1 rounded bg-white px-4 py-2 text-base shadow-sm outline-none focus:placeholder-transparent"
+            className="form-control flex-1 text-base shadow-sm outline-none"
             placeholder="Enter your email address"
           />
           <button className="btn-common btn-lg btn-secondary items-center gap-2">

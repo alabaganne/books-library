@@ -8,10 +8,9 @@ import {
 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
-// let footerLinkSection = [];
-let footerLinkSection = [
+const footerCols = [
   {
-    name: 'Customer Service',
+    title: 'Customer Service', // col 1
     links: [
       { name: 'FAQs', href: '/faqs' },
       { name: 'Contact Us', href: '/contact' },
@@ -22,7 +21,7 @@ let footerLinkSection = [
     ],
   },
   {
-    name: 'Shopping With Above',
+    title: 'Shopping With Above',
     links: [
       { name: 'Delivery', href: '/' },
       { name: 'Returns & Refunds', href: '/' },
@@ -33,7 +32,7 @@ let footerLinkSection = [
     ],
   },
   {
-    name: 'About Us',
+    title: 'About Us',
     links: [
       { name: 'Above Affiliate Programmed', href: '/' },
       { name: 'Brands', href: '/' },
@@ -45,7 +44,7 @@ let footerLinkSection = [
     ],
   },
   {
-    name: 'Help',
+    title: 'Help',
     links: [
       { name: 'Terms & Conditions', href: '/' },
       { name: 'Privacy Policy', href: '/' },
@@ -62,9 +61,9 @@ function Footer() {
   return (
     <footer className="bg-gray-100 py-12">
       <div className="container mx-auto grid grid-cols-5">
-        {footerLinkSection.map((section) => (
-          <div key={section.name} className="flex flex-col gap-4">
-            <div className="text-lg font-semibold">{section.name}</div>
+        {footerCols.map((section, index) => (
+          <div key={index} className="flex flex-col gap-4">
+            <div className="text-lg font-semibold">{section.title}</div>
             <div className="flex flex-col gap-4">
               {section.links.map((link) => (
                 <Link

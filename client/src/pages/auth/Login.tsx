@@ -34,6 +34,7 @@ function Login() {
               <Link to="/register" className="text-black hover:underline">
                 Register here
               </Link>
+              .
             </div>
             <div>
               <button className="btn-common btn-base btn-primary">

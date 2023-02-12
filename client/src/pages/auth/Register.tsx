@@ -9,7 +9,7 @@ function Register() {
   return (
     <div className="flex-center min-h-screen bg-gray-200">
       <div className="rounded bg-white p-12">
-        <h2>Create An Account</h2>
+        <h2>Create Account</h2>
         <form action="" className="mt-10 space-y-6">
           <div className="grid grid-cols-2 gap-6">
             <div className="form-group required col-span-1">
@@ -64,6 +64,7 @@ function Register() {
               <Link to="/login" className="text-black hover:underline">
                 Log in here
               </Link>
+              .
             </div>
             <div>
               <button className="btn-common btn-base btn-primary">
