@@ -44,7 +44,7 @@ export default function AboveBlog() {
             <Link
               key={post.id}
               to="/"
-              className="bg-common col-span-1 flex h-60 items-end rounded-lg bg-white p-6 text-white"
+              className="bg-common scale-on-hover col-span-1 flex h-60 items-end rounded-lg bg-black p-6 text-white"
               style={{
                 backgroundImage:
                   'linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.8)), url(' +

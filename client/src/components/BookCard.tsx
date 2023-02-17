@@ -19,7 +19,7 @@ export default function BookCard(props: Props) {
   return (
     <Link
       to={'/books/' + props.book.id}
-      className="rounded-md p-6 duration-100 hover:scale-105 hover:shadow-lg"
+      className="scale-on-hover rounded p-6 hover:shadow-lg"
     >
       <div>
         <img src={image} alt={props.book.title} className="mx-auto w-4/5" />
@@ -49,7 +49,10 @@ export default function BookCard(props: Props) {
           <FiShoppingCart className="mr-1 h-5 w-5" />
           <span>Add to Cart</span>
         </button>
-        <button onClick={like} className="rounded-full p-2 hover:bg-gray-100">
+        <button
+          onClick={like}
+          className="rounded-full p-2 text-gray-400 hover:bg-gray-100 hover:text-black"
+        >
           <FiHeart className="h-5 w-5" />
         </button>
       </div>

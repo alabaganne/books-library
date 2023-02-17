@@ -11,14 +11,14 @@ const data = [
   { label: 'Books', title: '50 essential travel books', imageUrl: image4 },
   { label: 'Books', title: 'The most devilish books', imageUrl: image5 },
   { label: 'Books', title: '30 essential self help books', imageUrl: image6 },
-  { label: 'Books', title: 'Weird books', imageUrl: image7 },
+  { label: 'Books', title: '60 books about World War II', imageUrl: image7 },
   { label: 'Books', title: '50 essential travel books', imageUrl: image4 },
 ];
 
 export default function ExploreMore() {
   return (
-    <div className="grid grid-cols-2">
-      <div className="col-span-1 mr-16 flex items-center">
+    <div className="grid grid-cols-12">
+      <div className="col-span-5 mr-16 flex items-center">
         <div>
           <h2>More To Explore</h2>
           <p className="mt-4 text-lg text-gray-600">
@@ -31,15 +31,22 @@ export default function ExploreMore() {
           </button>
         </div>
       </div>
-      <div className="col-span-1 grid grid-cols-3 gap-4">
+      <div className="col-span-7 grid grid-cols-3 gap-6">
         {data.map((card) => (
-          <div className="col-span-1 overflow-hidden rounded-lg bg-white shadow">
-            <img src={card.imageUrl} alt={card.title} className="max-h-48" />
+          <Link
+            to="/"
+            className="scale-on-hover col-span-1 overflow-hidden rounded-lg bg-white shadow-md"
+          >
+            <img
+              src={card.imageUrl}
+              alt={card.title}
+              className="max-h-48 w-full object-cover"
+            />
             <div className="p-6 font-semibold">
               <div className="text-sm uppercase text-red-500">{card.label}</div>
               <h4 className="mt-2 text-lg">{card.title}</h4>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

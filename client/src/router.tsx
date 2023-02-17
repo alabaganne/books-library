@@ -10,21 +10,23 @@ import Cart from './pages/Cart';
 import Home from './pages/Home/Index';
 import Books from './pages/Books/Index';
 import ShowBook from './pages/Books/Show';
+import AddBook from './pages/Books/Add';
 
 const router = createBrowserRouter([
-  { path: '/register', element: <Register /> },
-  { path: '/login', element: <Login /> },
   {
     path: '/',
     element: <MainLayout />,
     children: [
       { path: '/', element: <Home /> },
+      { path: '/register', element: <Register /> },
+      { path: '/login', element: <Login /> },
       { path: '/admin', element: <AdminDashboard /> },
       { path: '/contact', element: <Contact /> },
       { path: '/about', element: <About /> },
       { path: '/wishlist', element: <Wishlist /> },
       { path: '/cart', element: <Cart /> },
       { path: '/books', element: <Books /> },
+      { path: '/books/add', element: <AddBook /> },
       { path: '/books/:id/', element: <ShowBook /> },
     ],
   },

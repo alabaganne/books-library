@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 // * Submit Identity Card image to be able to purchase (optional)
 function Login() {
   return (
-    <div className="flex-center min-h-screen bg-gray-200">
+    <div className="flex-center bg-gray-200 py-32">
       <div className="rounded bg-white p-12">
         <h2>Log In</h2>
         <form action="" className="mt-10 space-y-6">
@@ -43,12 +43,6 @@ function Login() {
             </div>
           </div>
         </form>
-        <Link
-          to="/"
-          className="mt-6 flex items-center gap-2 text-sm text-indigo-500 hover:text-indigo-600"
-        >
-          <FiArrowLeft /> Go back home
-        </Link>
       </div>
     </div>
   );
