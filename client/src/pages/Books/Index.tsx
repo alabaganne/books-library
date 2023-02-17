@@ -12,6 +12,7 @@ import {
   FiSearch,
   FiUpload,
   FiUser,
+  FiUsers,
 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import BookCard from '../../components/BookCard';
@@ -45,7 +46,7 @@ export default function Books() {
             {/* when clicked, show menu to check all the genres that use wants to be displayed */}
           </button>
           <button className="flex items-center gap-2 border-r border-gray-300 p-4">
-            <FiUser className="h-4 w-4" /> Author <FiArrowDown />
+            <FiUsers className="h-4 w-4" /> Author <FiArrowDown />
             {/* when clicked, show menu to check all the authors that use wants to be displayed */}
           </button>
           <button className="flex items-center gap-2 border-r border-gray-300 p-4">
