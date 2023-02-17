@@ -18,6 +18,10 @@
 /* colors: indigo, yellow, and red */
 
 @layer components {
+  .nav-link {
+    @apply flex items-center gap-2 hover:text-yellow-400;
+  }
+
   /* text styles */
   h1,
   h2,

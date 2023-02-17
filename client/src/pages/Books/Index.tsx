@@ -56,6 +56,11 @@ export default function Books() {
             {/* when clicked, show slider to allow user to set min and max price  */}
           </button>
         </div>
+        <input
+          type="text"
+          className="w-full max-w-xl border border-r-0 border-gray-300 p-4 outline-none focus:placeholder-transparent"
+          placeholder="Search for Producs, Authors, Brands..."
+        />
         <button className="btn-common ml-auto rounded-none rounded-r-lg border border-gray-300 bg-gray-100 py-4 px-6 font-medium text-black shadow-none hover:border-transparent hover:bg-gray-800 hover:text-white">
           Search
           <FiSearch className="ml-1 h-4 w-4" />
