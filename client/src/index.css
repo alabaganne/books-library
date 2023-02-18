@@ -19,7 +19,7 @@
 
 @layer components {
   .nav-link {
-    @apply flex items-center gap-2 hover:text-yellow-400;
+    @apply flex items-center gap-2 text-gray-300 hover:text-gray-50;
   }
 
   /* text styles */

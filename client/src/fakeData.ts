@@ -1,4 +1,5 @@
 import Book from './interfaces/book';
+import Genre from './interfaces/genre';
 
 const book: Book = {
   id: 1,
@@ -16,4 +17,9 @@ for (let i = 0; i < 20; i++) {
   books20.push(book);
 }
 
-export { book, books5, books20 };
+const genre: Genre = {
+  id: 1,
+  name: 'Self-help',
+};
+
+export { book, books5, books20, genre };

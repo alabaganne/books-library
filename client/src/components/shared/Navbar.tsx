@@ -37,12 +37,12 @@ function Navbar() {
   const [language, setLanguage] = useState(languages[0]);
 
   return (
-    <nav className="bg-gray-900 text-sm text-white">
+    <nav className="bg-gray-900 text-sm font-medium text-white">
       <div className="container mx-auto py-6">
         <div className="flex items-center gap-20">
           <div>
             <h1 className="font-semibold">bookstore</h1>
-            <div>Read More, Learn More</div>
+            <div className="ml-0.5 text-yellow-500">Read More, Learn More</div>
           </div>
           <div className="flex-1 space-y-6">
             <div className="flex-between">
@@ -51,16 +51,16 @@ function Navbar() {
                 end of <strong>21 Dec</strong>
               </div>
               <div className="flex items-center gap-8">
-                <Link to="/" className="nav-link">
-                  <FiUsers className="h-5 w-5" />
+                <Link to="/about" className="nav-link">
+                  <FiUsers className="h-5 w-5 text-gray-500" />
                   <div>About Us</div>
                 </Link>
-                <Link to="/" className="nav-link">
-                  <FiInbox className="h-5 w-5" />
+                <Link to="/contact" className="nav-link">
+                  <FiInbox className="h-5 w-5 text-gray-500" />
                   <div>Contact Us</div>
                 </Link>
                 <Link to="/" className="nav-link">
-                  <FiMapPin className="h-5 w-5" />
+                  <FiMapPin className="h-5 w-5 text-gray-500" />
                   <div>See Our Store Locations</div>
                 </Link>
               </div>
@@ -68,38 +68,38 @@ function Navbar() {
             <div className="flex-between">
               <div className="flex items-center gap-8">
                 <Link to="/" className="nav-link">
-                  <FiHome className="h-5 w-5" />
+                  <FiHome className="h-5 w-5 text-gray-500" />
                   <div>Home</div>
                 </Link>
                 <Link to="/books" className="nav-link">
-                  <FiBook className="h-5 w-5" />
+                  <FiBook className="h-5 w-5 text-gray-500" />
                   <div>Books</div>
                 </Link>
-                <Link to="/" className="nav-link">
-                  <FiHash className="h-5 w-5" />
+                <Link to="/genres" className="nav-link">
+                  <FiHash className="h-5 w-5 text-gray-500" />
                   <div>Genres</div>
                 </Link>
 
                 {/* admin only, it is recommended to add author before adding its books, although it's possible for the "authorId" field to be empty */}
-                <Link to="/" className="nav-link">
-                  <FiUsers className="h-5 w-5" />
+                <Link to="/authors" className="nav-link">
+                  <FiUsers className="h-5 w-5 text-gray-500" />
                   <div>Authors</div>
                 </Link>
               </div>
               <div className="flex items-center gap-8">
                 <Link to="/cart" className="nav-link">
-                  <FiShoppingCart className="h-5 w-5" />
+                  <FiShoppingCart className="h-5 w-5 text-gray-500" />
                   <div>Cart - 0 Items</div>
                 </Link>
                 <Link to="/wishlist" className="nav-link">
-                  <FiHeart className="h-5 w-5" />
+                  <FiHeart className="h-5 w-5 text-red-500" />
                   <div>Wishlist</div>
                 </Link>
                 <Link
                   to={isLoggedIn ? '/account' : '/login'}
                   className="nav-link"
                 >
-                  <FiUser className="h-5 w-5" />
+                  <FiUser className="h-5 w-5 text-gray-500" />
                   <div>{isLoggedIn ? 'Account' : 'Login'}</div>
                 </Link>
               </div>

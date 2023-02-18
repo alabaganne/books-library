@@ -45,10 +45,9 @@ export default function Books() {
             <FiHash className="h-4 w-4" /> Genre <FiArrowDown />
             {/* when clicked, show menu to check all the genres that use wants to be displayed */}
           </button>
-          <button className="flex items-center gap-2 border-r border-gray-300 p-4">
+          {/* <button className="flex items-center gap-2 border-r border-gray-300 p-4">
             <FiUsers className="h-4 w-4" /> Author <FiArrowDown />
-            {/* when clicked, show menu to check all the authors that use wants to be displayed */}
-          </button>
+          </button> */}
           <button className="flex items-center gap-2 border-r border-gray-300 p-4">
             <FiDollarSign className="h-4 w-4" />
             Price
@@ -58,12 +57,12 @@ export default function Books() {
         </div>
         <input
           type="text"
-          className="w-full max-w-xl border border-r-0 border-gray-300 p-4 outline-none focus:placeholder-transparent"
-          placeholder="Search for Producs, Authors, Brands..."
+          className="w-full max-w-md border border-r-0 border-gray-900 p-4 outline-none focus:placeholder-transparent"
+          placeholder="Search for Book Name, Authors, ..."
         />
-        <button className="btn-common ml-auto rounded-none rounded-r-lg border border-gray-300 bg-gray-100 py-4 px-6 font-medium text-black shadow-none hover:border-transparent hover:bg-gray-800 hover:text-white">
+        <button className="btn-common ml-auto rounded-none rounded-r-lg border border-gray-900 bg-gray-100 py-4 px-6 font-medium text-black shadow-none hover:border-transparent hover:bg-gray-900 hover:text-white">
           Search
-          <FiSearch className="ml-1 h-4 w-4" />
+          <FiSearch className="h-4 w-4" />
         </button>
       </div>
       <div className="mt-8 grid grid-cols-5 gap-6">
