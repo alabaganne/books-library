@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import BookCard from '../../components/BookCard';
+import BooksList from '../../components/BooksList';
 import { books5 } from '../../fakeData';
 
 export default function NewReleases() {
@@ -11,9 +12,8 @@ export default function NewReleases() {
           See All Books -&gt;
         </Link>
       </div>
-      <div className="mt-8 grid grid-cols-5 gap-6">
-        {books5 &&
-          books5.map((book, index) => <BookCard key={index} book={book} />)}
+      <div className="mt-8">
+        <BooksList books={books5} />
       </div>
     </div>
   );

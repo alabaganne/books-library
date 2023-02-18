@@ -11,10 +11,10 @@ const book: Book = {
 };
 
 let books5: Array<Book> = [];
-let books20: Array<Book> = [];
-for (let i = 0; i < 20; i++) {
+let books30: Array<Book> = [];
+for (let i = 0; i < 30; i++) {
   if (i < 5) books5.push(book);
-  books20.push(book);
+  books30.push(book);
 }
 
 const genre: Genre = {
@@ -22,4 +22,4 @@ const genre: Genre = {
   name: 'Self-help',
 };
 
-export { book, books5, books20, genre };
+export { book, books5, books30, genre };

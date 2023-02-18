@@ -60,7 +60,7 @@ const footerCols = [
 function Footer() {
   return (
     <footer className="bg-gray-100 py-12">
-      <div className="container mx-auto grid grid-cols-5">
+      <div className="container mx-auto grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
         {footerCols.map((section, index) => (
           <div key={index} className="flex flex-col gap-4">
             <div className="text-lg font-semibold">{section.title}</div>

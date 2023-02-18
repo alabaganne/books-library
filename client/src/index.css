@@ -18,9 +18,21 @@
 /* colors: indigo, yellow, and red */
 
 @layer components {
-  .nav-link {
+  .navlink {
     @apply flex items-center gap-2 text-gray-300 hover:text-gray-50;
   }
+  .navlink.mobile {
+    @apply rounded-lg px-6 py-4 hover:bg-gray-800;
+  }
+  .navlink .icon {
+    @apply h-5 w-5 text-gray-500;
+  }
+
+  /* layout */
+  .container {
+    @apply px-6;
+  }
+  /* end layout */
 
   /* text styles */
   h1,
@@ -67,7 +79,7 @@
   /* button styles */
   .btn-common {
     /* common button styles */
-    @apply inline-flex items-center gap-1 rounded border border-transparent shadow;
+    @apply inline-flex items-center gap-1 rounded border border-transparent shadow duration-75;
   }
   /* button sizes */
   .btn-sm {
@@ -91,6 +103,9 @@
   .btn-outline-black {
     /* only when background is light */
     @apply border-gray-300 bg-transparent text-black shadow-none hover:border-black hover:bg-black hover:text-white;
+  }
+  .btn-outline-light {
+    @apply border border-gray-300 hover:bg-gray-100;
   }
   /* end button styles */
 

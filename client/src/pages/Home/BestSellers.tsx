@@ -1,17 +1,8 @@
 import { Link } from 'react-router-dom';
 import BookCard from '../../components/BookCard';
 import Book from '../../interfaces/book';
-
-const book: Book = {
-  id: 1,
-  title: 'Shadowlands: A Journey Through Lost Britain',
-  authorId: 1,
-  authorName: 'Matthew Green',
-  price: 450.43,
-  priceOld: 550.21,
-};
-
-const books: Array<Book> = [book, book, book, book, book];
+import { books5 } from '../../fakeData';
+import BooksList from '../../components/BooksList';
 
 export default function BestSellers() {
   return (
@@ -22,9 +13,8 @@ export default function BestSellers() {
           See All Books -&gt;
         </Link>
       </div>
-      <div className="mt-8 grid grid-cols-5 gap-6">
-        {books &&
-          books.map((book, index) => <BookCard key={index} book={book} />)}
+      <div className="mt-8">
+        <BooksList books={books5} />
       </div>
     </div>
   );

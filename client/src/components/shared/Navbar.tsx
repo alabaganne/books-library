@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import {
+  FiArrowDown,
+  FiArrowUp,
   FiBook,
   FiChevronDown,
   FiGlobe,
@@ -11,6 +13,7 @@ import {
   FiLogIn,
   FiMap,
   FiMapPin,
+  FiMenu,
   FiPhone,
   FiSearch,
   FiShoppingCart,
@@ -36,76 +39,135 @@ function Navbar() {
   ];
   const [language, setLanguage] = useState(languages[0]);
 
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  function toggle() {
+    setNavbarOpen(!navbarOpen);
+  }
+
   return (
-    <nav className="bg-gray-900 text-sm font-medium text-white">
-      <div className="container mx-auto py-6">
-        <div className="flex items-center gap-20">
+    <nav className="bg-gray-900 py-6 text-sm font-medium text-white">
+      <div className="container mx-auto space-y-6">
+        <div className="flex items-center gap-x-12">
+          {/* logo */}
           <div>
-            <h1 className="font-semibold">bookstore</h1>
+            <h1 className="text-5xl font-semibold xl:text-6xl">bookstore</h1>
             <div className="ml-0.5 text-yellow-500">Read More, Learn More</div>
           </div>
+          {/* links */}
           <div className="flex-1 space-y-6">
-            <div className="flex-between">
+            <div className="flex-between gap-8">
               <div>
-                Free delivery over <strong>300 DT</strong>. Order gifts by the
-                end of <strong>21 Dec</strong>
+                <p className="hidden lg:block">Free delivery over 300 DT</p>
               </div>
               <div className="flex items-center gap-8">
-                <Link to="/about" className="nav-link">
-                  <FiUsers className="h-5 w-5 text-gray-500" />
+                <Link to="/about" className="navlink hidden sm:flex">
+                  <FiUsers className="icon" />
                   <div>About Us</div>
                 </Link>
-                <Link to="/contact" className="nav-link">
-                  <FiInbox className="h-5 w-5 text-gray-500" />
+                <Link to="/contact" className="navlink hidden xl:flex">
+                  <FiInbox className="icon" />
                   <div>Contact Us</div>
                 </Link>
-                <Link to="/" className="nav-link">
-                  <FiMapPin className="h-5 w-5 text-gray-500" />
-                  <div>See Our Store Locations</div>
-                </Link>
+                <div className="navlink text-white">
+                  <FiPhone className="h-5 w-5 text-white" />
+                  (+216) 50101959
+                </div>
               </div>
             </div>
-            <div className="flex-between">
+            <div className="flex-between gap-8">
               <div className="flex items-center gap-8">
-                <Link to="/" className="nav-link">
-                  <FiHome className="h-5 w-5 text-gray-500" />
+                <Link to="/" className="navlink hidden lg:flex">
+                  <FiHome className="icon" />
                   <div>Home</div>
                 </Link>
-                <Link to="/books" className="nav-link">
-                  <FiBook className="h-5 w-5 text-gray-500" />
+                <Link to="/books" className="navlink hidden lg:flex">
+                  <FiBook className="icon" />
                   <div>Books</div>
                 </Link>
-                <Link to="/genres" className="nav-link">
-                  <FiHash className="h-5 w-5 text-gray-500" />
+                <Link to="/genres" className="navlink hidden lg:flex">
+                  <FiHash className="icon" />
                   <div>Genres</div>
                 </Link>
 
                 {/* admin only, it is recommended to add author before adding its books, although it's possible for the "authorId" field to be empty */}
-                <Link to="/authors" className="nav-link">
-                  <FiUsers className="h-5 w-5 text-gray-500" />
+                <Link to="/authors" className="navlink hidden xl:flex">
+                  <FiUsers className="icon" />
                   <div>Authors</div>
                 </Link>
               </div>
               <div className="flex items-center gap-8">
-                <Link to="/cart" className="nav-link">
-                  <FiShoppingCart className="h-5 w-5 text-gray-500" />
-                  <div>Cart - 0 Items</div>
+                <Link to="/cart" className="navlink">
+                  <FiShoppingCart className="icon" />
+                  <div className="hidden sm:block">Cart - 0 Items</div>
+                  <div className="sm:hidden">0</div>
                 </Link>
-                <Link to="/wishlist" className="nav-link">
-                  <FiHeart className="h-5 w-5 text-red-500" />
+                <Link to="/wishlist" className="navlink hidden xl:flex">
+                  <FiHeart className="icon" />
                   <div>Wishlist</div>
                 </Link>
                 <Link
                   to={isLoggedIn ? '/account' : '/login'}
-                  className="nav-link"
+                  className="navlink hidden md:flex"
                 >
-                  <FiUser className="h-5 w-5 text-gray-500" />
+                  <FiUser className="icon" />
                   <div>{isLoggedIn ? 'Account' : 'Login'}</div>
                 </Link>
+                <button onClick={toggle} className="navlink group xl:hidden">
+                  <FiMenu className="icon" />
+                  Menu
+                  {navbarOpen ? (
+                    <FiArrowUp className="duration-75 group-hover:-translate-y-0.5" />
+                  ) : (
+                    <FiArrowDown className="duration-75 group-hover:translate-y-0.5" />
+                  )}
+                </button>
               </div>
             </div>
           </div>
         </div>
+        {navbarOpen && (
+          <div className="xl:hidden">
+            <Link to="/" className="navlink mobile lg:hidden">
+              <FiHome className="icon" />
+              <div>Home</div>
+            </Link>
+            <Link to="/books" className="navlink mobile lg:hidden">
+              <FiBook className="icon" />
+              <div>Books</div>
+            </Link>
+            <Link to="/genres" className="navlink mobile lg:hidden">
+              <FiHash className="icon" />
+              Genres
+            </Link>
+            <Link to="/authors" className="navlink mobile">
+              <FiUsers className="icon" />
+              Authors
+            </Link>
+            <Link to="/wishlist" className="navlink mobile">
+              <FiHeart className="icon" />
+              <div>Wishlist</div>
+            </Link>
+            <Link
+              to={isLoggedIn ? '/account' : '/login'}
+              className="navlink mobile md:hidden"
+            >
+              <FiUser className="icon" />
+              <div>{isLoggedIn ? 'Account' : 'Login'}</div>
+            </Link>
+            <Link to="/about" className="navlink mobile sm:hidden">
+              <FiUsers className="icon" />
+              <div>About Us</div>
+            </Link>
+            <Link to="/contact" className="navlink mobile">
+              <FiInbox className="icon" />
+              <div>Contact Us</div>
+            </Link>
+            <Link to="/authors" className="navlink mobile">
+              <FiMapPin className="icon" />
+              Our Stores
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   );
