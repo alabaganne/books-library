@@ -45,7 +45,7 @@ export default function Books() {
       {/* Filters */}
       <div className="mt-10 flex flex-wrap items-center gap-4 text-sm font-medium">
         <span className="inline-flex items-center gap-2 rounded-lg bg-gray-900 p-4 text-white">
-          <FiFilter className="h-4 w-4" /> Filters <FiArrowRight />
+          <FiFilter className="h-4 w-4" /> Filters
         </span>
         <button className={styles.filterBtn + ''}>
           <FiHash className="h-4 w-4" /> Genre{' '}

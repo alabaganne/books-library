@@ -9,7 +9,7 @@ export default function Pagination() {
       </button>
       <button className="flex-center px-5 py-3 hover:bg-gray-100">1</button>
       {/* current page styles */}
-      <button className="flex-center cursor-default bg-gray-800 px-5 py-3 text-white">
+      <button className="flex-center cursor-default bg-gray-900 px-5 py-3 text-white">
         2
       </button>
       <button className="flex-center px-5 py-3 hover:bg-gray-100">3</button>

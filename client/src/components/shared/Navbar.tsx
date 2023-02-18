@@ -9,16 +9,10 @@ import {
   FiHeart,
   FiHome,
   FiInbox,
-  FiInfo,
-  FiLogIn,
-  FiMap,
-  FiMapPin,
   FiMenu,
   FiPhone,
-  FiSearch,
   FiShoppingCart,
   FiUser,
-  FiUserPlus,
   FiUsers,
 } from 'react-icons/fi';
 import { useState } from 'react';
@@ -40,9 +34,6 @@ function Navbar() {
   const [language, setLanguage] = useState(languages[0]);
 
   const [navbarOpen, setNavbarOpen] = useState(false);
-  function toggle() {
-    setNavbarOpen(!navbarOpen);
-  }
 
   return (
     <nav className="bg-gray-900 py-6 text-sm font-medium text-white">
@@ -60,7 +51,7 @@ function Navbar() {
                 <p className="hidden lg:block">Free delivery over 300 DT</p>
               </div>
               <div className="flex items-center gap-8">
-                <Link to="/about" className="navlink hidden sm:flex">
+                <Link to="/about" className="navlink hidden md:flex">
                   <FiUsers className="icon" />
                   <div>About Us</div>
                 </Link>
@@ -68,8 +59,12 @@ function Navbar() {
                   <FiInbox className="icon" />
                   <div>Contact Us</div>
                 </Link>
+                <button className="navlink text-white">
+                  <FiGlobe className="h-5 w-5" />
+                  EN <FiChevronDown />
+                </button>
                 <div className="navlink text-white">
-                  <FiPhone className="h-5 w-5 text-white" />
+                  <FiPhone className="h-5 w-5" />
                   (+216) 50101959
                 </div>
               </div>
@@ -112,7 +107,10 @@ function Navbar() {
                   <FiUser className="icon" />
                   <div>{isLoggedIn ? 'Account' : 'Login'}</div>
                 </Link>
-                <button onClick={toggle} className="navlink group xl:hidden">
+                <button
+                  onClick={() => setNavbarOpen(!navbarOpen)}
+                  className="navlink group xl:hidden"
+                >
                   <FiMenu className="icon" />
                   Menu
                   {navbarOpen ? (
@@ -154,17 +152,13 @@ function Navbar() {
               <FiUser className="icon" />
               <div>{isLoggedIn ? 'Account' : 'Login'}</div>
             </Link>
-            <Link to="/about" className="navlink mobile sm:hidden">
+            <Link to="/about" className="navlink mobile md:hidden">
               <FiUsers className="icon" />
               <div>About Us</div>
             </Link>
             <Link to="/contact" className="navlink mobile">
               <FiInbox className="icon" />
               <div>Contact Us</div>
-            </Link>
-            <Link to="/authors" className="navlink mobile">
-              <FiMapPin className="icon" />
-              Our Stores
             </Link>
           </div>
         )}
