@@ -1,11 +1,14 @@
 import Book from './interfaces/book';
 import Genre from './interfaces/genre';
+import image from './assets/shadowlands.jpg';
 
 const book: Book = {
   id: 1,
   title: 'Shadowlands: A Journey Through Lost Britain',
+  description: `The Alchemist" is a novel that tells the story of a young shepherd boy named Santiago who dreams of exploring the world and finding his treasure. He decides to follow his dream and embarks on a journey to Egypt, where he believes his treasure lies buried in the pyramids.`,
   authorId: 1,
   authorName: 'Matthew Green',
+  imageUrl: image,
   price: 450.43,
   priceOld: 550.21,
 };

@@ -76,39 +76,6 @@
     @apply flex items-center justify-end;
   }
 
-  /* button styles */
-  .btn-common {
-    /* common button styles */
-    @apply inline-flex items-center gap-1 rounded border border-transparent shadow duration-75;
-  }
-  /* button sizes */
-  .btn-sm {
-    @apply rounded-lg px-3 py-2 text-xs font-semibold;
-  }
-  .btn-base {
-    @apply px-4 py-2 font-medium;
-  }
-  .btn-lg {
-    @apply px-5 py-3 font-semibold;
-  }
-  /* button colors */
-  .btn-primary {
-    /* only when background is light */
-    @apply bg-indigo-500 text-white hover:bg-indigo-600;
-  }
-  .btn-secondary {
-    /* only when background is dark */
-    @apply bg-yellow-400 text-black hover:bg-yellow-500;
-  }
-  .btn-outline-black {
-    /* only when background is light */
-    @apply border-gray-300 bg-transparent text-black shadow-none hover:border-black hover:bg-black hover:text-white;
-  }
-  .btn-outline-light {
-    @apply border border-gray-300 hover:bg-gray-100;
-  }
-  /* end button styles */
-
   /* background styles */
   .bg-common {
     /* common background image styles */
